@@ -5,9 +5,9 @@ An Event Store implemented atop Supabase
 ## Planned features
 
 - [ ] Event Store
-- [ ] Append events to stream
-- [ ] Read events from stream
-- [ ] Subscribe to events from stream
+  - [ ] Append events to stream
+  - [ ] Read events from stream
+  - [ ] Subscribe to events from stream
 
 - [ ] Example app (Commercial Location Spotter)
   - [ ] Shows map centered at current device geolocation
