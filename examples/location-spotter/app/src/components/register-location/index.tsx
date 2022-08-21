@@ -5,28 +5,25 @@ import cn from "classnames";
 import Camera from "react-html5-camera-photo";
 import "react-html5-camera-photo/build/css/index.css";
 
-type Props = {
-  geolocation: {
-    latitude: number;
-    longitude: number;
-  }
-}
+import { useGeolocationStore } from "../../utils/geolocation-store";
 
-const RegisterLocation = (props: Props) => {
-  const { geolocation } = props
 
+const RegisterLocation = () => {
   const cancelButtonRef = useRef(null)
 
   const [open, setOpen] = useState(false)
   const [pictureDataUri, setPictureDataUri] = useState('')
   const [cameraError,setCameraError] = useState<Error | null>(null)
 
-  const ready = geolocation && pictureDataUri
+  const ready = pictureDataUri
 
   const handleRegistration = () => {
     setPictureDataUri('')
     setOpen(false)
 
+    const geolocation = useGeolocationStore.getState().geolocation
+
+    console.log(geolocation,pictureDataUri)
     // TODO - send to database
   }
 

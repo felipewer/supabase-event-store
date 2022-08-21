@@ -4,6 +4,7 @@ import { CircleMarker, MapContainer, Popup, TileLayer, useMap } from "react-leaf
 import WaitingForGeolocation from "../waiting-geolocation";
 import { env } from "../../env/client.mjs"
 import { useEffect } from "react";
+import { useGeolocation } from "../../utils/geolocation-store";
 
 type Props = {
   geolocation: {
@@ -42,17 +43,18 @@ const MapContent = (props: Props) => {
   </>
 }
 
-const Map = (props: Props) => {
-  const { latitude, longitude } = props.geolocation
-  return (latitude && longitude)
+const Map = () => {
+  const geolocation = useGeolocation()
+
+  return (geolocation?.latitude && geolocation?.longitude)
     ? <MapContainer
         className="h-full w-full"
-        center={[latitude, longitude]}
+        center={[geolocation.latitude, geolocation?.longitude]}
         zoom={16}
         scrollWheelZoom={true}
       >
         {/* Here we need a child component to acces the map instance with useMap */}
-        <MapContent geolocation={props.geolocation}/>
+        <MapContent geolocation={geolocation}/>
       </MapContainer>
     : <WaitingForGeolocation/>
 }
