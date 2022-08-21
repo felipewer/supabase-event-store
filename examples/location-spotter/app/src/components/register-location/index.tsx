@@ -72,7 +72,7 @@ const RegisterLocation = () => {
                     New Spot
                   </Dialog.Title>
                 </div>
-                <div className="relative mt-2 flex items-center h-[640px]">
+                <div className="relative mt-2 flex items-center">
                   {(cameraError) && (
                     <div className="absolute w-full h-full bg-white z-10 border-2 border-gray-400 border-dashed rounded-lg p-12 flex flex-col items-center justify-center">
                       <CameraIcon className="text-gray-400 h-10 w-10"/>
@@ -82,7 +82,7 @@ const RegisterLocation = () => {
                   {pictureDataUri && <img src={pictureDataUri} />}
                   {!pictureDataUri &&
                     <Camera
-                      idealResolution = {{width: 480, height: 640}}
+                      // idealResolution = {{width: 640, height: 480}}
                       idealFacingMode={'environment'}
                       isDisplayStartCameraError={false}
                       onCameraStart={() => setCameraError(null)}
