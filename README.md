@@ -10,7 +10,7 @@ An Event Store implemented atop Supabase
   - [ ] Subscribe to events from stream
 
 - [ ] Example app (Commercial Location Spotter)
-  - [ ] Shows map centered at current device geolocation
+  - [x] Shows map centered at current device geolocation
   - [ ] Shows surrounding previously spotted locations on map
   - [ ] Allows adding a new commercial location
     - [ ] Capture Geolocation

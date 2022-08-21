@@ -27,7 +27,8 @@ const Home: NextPage = () => {
       <Head>
         <title>Location Spotter</title>
         <meta name="description" content="Commercial Location Spotter" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"/>
+        <link rel="icon" type="image/png" href="/assets/images/favicon.png"/>
       </Head>
 
       <main className="h-screen w-screen">
