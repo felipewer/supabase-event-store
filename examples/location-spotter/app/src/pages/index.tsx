@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import useGeolocation from "react-hook-geolocation";
-
+import RegisterLocation from "../components/register-location";
 
 // import { trpc } from "../utils/trpc";
 
@@ -27,8 +27,8 @@ const Home: NextPage = () => {
       <Head>
         <title>Location Spotter</title>
         <meta name="description" content="Commercial Location Spotter" />
-        <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"/>
-        <link rel="icon" type="image/png" href="/assets/images/favicon.png"/>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+        <link rel="icon" type="image/png" href="/favicon.png"/>
       </Head>
 
       <main className="h-screen w-screen">
@@ -37,7 +37,9 @@ const Home: NextPage = () => {
         {/* <div className="pt-6 text-2xl text-blue-500 flex justify-center items-center w-full">
           {hello.data ? <p>{hello.data.greeting}</p> : <p>Loading..</p>}
         </div> */}
+
       </main>
+      <RegisterLocation geolocation={geolocation}/>
     </>
   );
 };
